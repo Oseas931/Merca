@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Onvex | Tecnología clara, decisiones seguras</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f8;--card:#fff;--tx:#1b1e4b;--mut:#5a6078;--pri:#171a5c;--ptx:#fff;--gr:#1f8a3b;--cy:#0b7a9c;--line:#dfe3ea;--soft:#e9eef3;--hd:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d2a;--card:#14173f;--tx:#e7e9ff;--mut:#a3a9cf;--pri:#2bb3dc;--ptx:#06122b;--gr:#4cc16a;--cy:#38bdf8;--line:#262a5c;--soft:#1b1f4d;--hd:#0f1236;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0d2a;--card:#14173f;--tx:#e7e9ff;--mut:#a3a9cf;--pri:#2bb3dc;--ptx:#06122b;--gr:#4cc16a;--cy:#38bdf8;--line:#262a5c;--soft:#1b1f4d;--hd:#0f1236;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 "DM Sans",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);z-index:60}
+a{color:inherit;text-decoration:none}svg{width:1em;height:1em;display:block}
+.w{max-width:1140px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--hd);border-bottom:1px solid var(--line)}
+.hr{display:flex;align-items:center;gap:18px;padding:10px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;line-height:1.1}.logo b{font-size:22px;color:var(--tx)}.logo small{display:block;font-size:11px;color:var(--cy);letter-spacing:.04em}
+.mk{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#1f8a3b,#4cae4f);display:grid;place-items:center;color:#fff;font-size:22px}
+nav{display:flex;gap:22px;font-size:14px;font-weight:500;color:var(--mut);margin-left:auto}nav a:hover{color:var(--cy)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--pri);cursor:pointer;font:inherit;font-weight:700;font-size:14px;border-radius:8px;padding:10px 18px;background:var(--pri);color:var(--ptx);transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(23,26,92,.25)}.btn.o{background:transparent;color:var(--tx)}.btn.g{background:var(--gr);border-color:var(--gr);color:#fff}.btn.s{padding:7px 12px;font-size:13px}
+.hero{background:linear-gradient(135deg,#171a5c 0%,#0b4a6f 70%,#1f8a3b 140%);color:#fff;padding:64px 0}
+.hg{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.eb{color:#7fd6ee;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.hero h1{font-size:clamp(30px,4.6vw,48px);line-height:1.12;margin:10px 0 16px}.hero p{color:#d6dcf5;max-width:560px;font-size:18px}
+.pts{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-size:14px;color:#cfe3f1}.pts span{display:flex;gap:8px;align-items:center}.pts svg{color:#6fd68a;font-size:18px}
+.hero .btn.o{color:#fff;border-color:#fff}.hero .btn:not(.o):not(.g){background:#fff;color:#171a5c;border-color:#fff}
+.q{background:var(--card);color:var(--tx);border-radius:14px;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.q h3{margin:0 0 4px}.q .big{font-size:38px}
+section{padding:60px 0}.alt{background:var(--card)}
+h2{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}.sub{color:var(--mut);margin:0 0 28px;max-width:640px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}.alt .card{background:var(--bg)}
+.fi{width:46px;height:46px;border-radius:10px;background:var(--soft);color:var(--gr);display:grid;place-items:center;font-size:24px;margin-bottom:12px}
+.n{font-size:12px;font-weight:700;color:var(--cy);letter-spacing:.08em}
+h3{margin:0 0 6px;font-size:18px}.sm{font-size:14px;color:var(--mut)}
+.tb{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+input,select{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--cy);outline-offset:1px}
+.tb .f{flex:1;min-width:200px}.tb .sl{width:170px}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.cats button{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:99px;padding:6px 14px;cursor:pointer;font:inherit;font-size:13px;display:flex;gap:6px;align-items:center}
+.cats button.on{background:var(--pri);color:var(--ptx);border-color:var(--pri)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.pc{padding:0;overflow:hidden;display:flex;flex-direction:column;transition:.25s}.pc:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(23,26,92,.15)}
+.tl{height:118px;background:linear-gradient(135deg,#171a5c,#0b4a6f 60%,#1f8a3b);color:#fff;display:grid;place-items:center;font-size:50px;position:relative}
+.tl i{position:absolute;left:12px;top:10px;font:700 11px "DM Sans";letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.pb{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.pr{font-size:22px;font-weight:700}.cu{color:var(--gr);font-weight:700;font-size:13px}
+.pb .rw{display:flex;gap:8px;margin-top:auto;padding-top:8px}.pb .rw .btn{flex:1;justify-content:center}
+.cm{font-size:13px;color:var(--mut);display:flex;gap:6px;align-items:center;cursor:pointer}.cm input{width:auto}
+.sim{display:grid;grid-template-columns:1fr 1.1fr;gap:20px}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 4px;color:var(--mut)}
+input[type=range]{padding:0;accent-color:var(--gr)}
+.big{font-size:46px;font-weight:700;color:var(--gr);line-height:1.1}
+.kv{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.bar{height:12px;border-radius:99px;background:var(--soft);overflow:hidden;margin:16px 0 6px;display:flex}.bar i{background:var(--pri);transition:.4s}.bar b{background:#f59e0b;transition:.4s}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 16px;background:var(--card);margin-bottom:10px}summary{cursor:pointer;font-weight:700}
+.tw{max-height:260px;overflow:auto;margin-top:10px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}th{position:sticky;top:0;background:var(--soft)}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:18px;flex-wrap:wrap}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;color:var(--mut);font:inherit;font-weight:700;padding:10px 14px;cursor:pointer}.tabs button.on{color:var(--tx);border-color:var(--gr)}
+.pn{display:none}.pn.on{display:block;animation:f .3s}@keyframes f{from{opacity:0;transform:translateY(6px)}}
+.ct{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}.ct .fi{margin:0;flex:none}
+.rv{opacity:0;transform:translateY(16px);transition:.6s}.rv.in{opacity:1;transform:none}
+footer{background:var(--hd);border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
+dialog{border:0;border-radius:14px;padding:26px;max-width:720px;width:92%;background:var(--card);color:var(--tx);box-shadow:0 30px 80px rgba(0,0,0,.4)}dialog::backdrop{background:rgba(5,8,30,.6)}
+.cb{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--pri);color:var(--ptx);border-radius:12px;padding:10px 16px;display:none;gap:12px;align-items:center;z-index:55;box-shadow:0 10px 30px rgba(0,0,0,.35)}.cb.s{display:flex}
+.cb .btn{background:#fff;color:#171a5c;border-color:#fff}
+#toast{position:fixed;right:18px;bottom:calc(80px + env(safe-area-inset-bottom,0px));background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:8px;opacity:0;transition:.3s;z-index:70;pointer-events:none}#toast.s{opacity:1}
+@media(max-width:820px){.hg,.sim{grid-template-columns:1fr}nav{order:3;width:100%;overflow-x:auto;margin:0}.hero{padding:40px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<header><div class="w hr">
+<a class="logo" href="#"><span class="mk" data-i="check"></span><span><b>Onvex</b><small>ASESORÍA INTEGRAL</small></span></a>
+<nav><a href="#servicio">Servicio</a><a href="#catalogo">Catálogo</a><a href="#simulador">Mi Cuota Real</a><a href="#garantia">Garantía</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
+<button class="btn o s" id="cartb"><span data-i="list"></span> Mi lista (0)</button>
+</div></header>
+
+<div class="hero"><div class="w hg">
+<div><div class="eb">Distribuidora de tecnología · Chimaltenango</div>
+<h1>Tecnología clara, decisiones seguras.</h1>
+<p>Conozca su cuota exacta, comprenda las características del producto y reciba la garantía explicada antes de pagar.</p>
+<p style="margin-top:22px"><a class="btn" href="#simulador">Simular mi cuota</a> <a class="btn o" href="#catalogo">Explorar catálogo</a></p>
+<div class="pts"><span><i data-i="check"></i>Cuota calculada antes de decidir</span><span><i data-i="check"></i>Asesoría sin presión de venta</span><span><i data-i="check"></i>Garantía explicada por escrito</span></div></div>
+<div class="q"><h3>Cotización rápida</h3><p class="sm" style="margin:0 0 6px">Estime su cuota en segundos.</p>
+<label for="hp">Precio (Q)</label><input id="hp" type="number" min="0" step="100" value="3999">
+<label for="hn">Plazo</label><select id="hn"><option>6</option><option selected>12</option><option>18</option><option>24</option><option>36</option></select>
+<div class="sm" style="margin-top:14px">Cuota mensual aproximada</div><div class="big" id="hq">—</div>
+<p style="margin:12px 0 0"><a class="btn g s" href="#simulador" id="hgo">Ver detalle completo</a></p></div>
+</div></div>
+
+<section id="servicio"><div class="w">
+<h2 class="rv">Asesoría Integral</h2><p class="sub rv">Un servicio de tres componentes presente en cada compra, en tienda y en línea.</p>
+<div class="g3">
+<div class="card rv"><div class="fi" data-i="calc"></div><div class="n">COMPONENTE 1</div><h3>Simulador “Mi Cuota Real”</h3><p class="sm">Muestra la cuota mensual, los intereses y el total a pagar antes de decidir una compra al crédito.</p></div>
+<div class="card rv"><div class="fi" data-i="chat"></div><div class="n">COMPONENTE 2</div><h3>Asesoría de características</h3><p class="sm">Explicamos especificaciones, beneficios y limitaciones según su necesidad y presupuesto.</p></div>
+<div class="card rv"><div class="fi" data-i="doc"></div><div class="n">COMPONENTE 3</div><h3>Garantía en lenguaje simple</h3><p class="sm">Entregamos una ficha breve con lo que cubre, lo que no cubre y cómo realizar un reclamo.</p></div>
+</div></div></section>
+
+<section id="catalogo" class="alt"><div class="w">
+<h2>Catálogo</h2><p class="sub">Productos de ejemplo con fichas claras. Compare hasta tres equipos y simule su cuota con un clic.</p>
+<div class="tb"><div class="f"><input id="q" type="search" placeholder="Buscar por nombre o característica…" aria-label="Buscar productos"></div>
+<select class="sl" id="so" aria-label="Ordenar"><option value="">Orden: relevancia</option><option value="a">Precio: menor a mayor</option><option value="d">Precio: mayor a menor</option></select>
+<div class="sl"><label for="mx" style="margin:0">Precio máximo: <span id="mv"></span></label><input id="mx" type="range" min="100" max="9000" step="100" value="9000"></div></div>
+<div class="cats" id="cats"></div><div class="pg" id="pg"></div><p class="sm" id="cnt" style="margin-top:14px"></p>
+</div></section>
+
+<section id="simulador"><div class="w">
+<h2>Simulador “Mi Cuota Real”</h2><p class="sub">Calcule cuánto pagará cada mes y en total. Ajuste los valores y observe el resultado al instante.</p>
+<div class="sim">
+<div class="card"><label for="p">Precio del producto (Q)</label><input id="p" type="number" min="0" step="50" value="3999">
+<label for="e">Enganche: <span id="ev"></span></label><input id="er" type="range" min="0" max="80" step="5" value="0">
+<label for="n">Plazo (meses)</label><select id="n"><option>6</option><option selected>12</option><option>18</option><option>24</option><option>36</option></select>
+<label for="t">Tasa de interés anual (%): use 0 para meses sin intereses</label><input id="t" type="number" min="0" max="100" step="0.5" value="12">
+<p class="sm" style="margin-top:14px">Valores de referencia editables. Las condiciones finales las confirma la entidad financiera; Onvex no garantiza la aprobación de crédito.</p></div>
+<div class="card"><div class="sm">Cuota mensual</div><div class="big" id="rc">—</div><div class="sm" id="rt"></div>
+<div class="bar"><i id="b1"></i><b id="b2"></b></div><div class="sm"><span style="color:var(--pri)">■</span> Capital financiado &nbsp; <span style="color:#f59e0b">■</span> Intereses</div>
+<div class="kv"><span>Enganche</span><b id="re"></b></div><div class="kv"><span>Monto financiado</span><b id="rf"></b></div><div class="kv"><span>Intereses totales</span><b id="ri"></b></div><div class="kv"><span>Total a pagar</span><b id="rtot"></b></div>
+<details style="margin-top:14px"><summary>Ver tabla de amortización</summary><div class="tw"><table><thead><tr><th>Mes</th><th>Cuota</th><th>Interés</th><th>Capital</th><th>Saldo</th></tr></thead><tbody id="am"></tbody></table></div></details></div>
+</div></div></section>
+
+<section id="garantia" class="alt"><div class="w">
+<h2>Garantía que se entiende</h2><p class="sub">Ficha de ejemplo que se entrega al momento de la venta y se ajusta a cada producto.</p>
+<div class="tabs" id="tabs"><button class="on" data-t="0">Qué cubre</button><button data-t="1">Qué no cubre</button><button data-t="2">Cómo reclamar</button></div>
+<div class="pn on"><div class="card"><h3>Cobertura</h3><p class="sm">Fallas de fabricación durante el período indicado en la ficha del producto. La ficha detalla la duración y las condiciones específicas de cada equipo.</p></div></div>
+<div class="pn"><div class="card"><h3>Exclusiones</h3><p class="sm">Golpes, daños por líquidos, uso indebido o reparaciones realizadas por terceros no autorizados.</p></div></div>
+<div class="pn"><div class="card"><h3>Proceso de reclamo</h3><p class="sm">Comuníquese con nosotros o visite la tienda; registramos su caso y damos seguimiento hasta su resolución.</p>
+<div class="ct" style="margin-top:16px"><div class="fi" data-i="call"></div><div><b>Teléfonos: <a href="tel:+50247442809" style="color:var(--cy)">4744-2809</a> · <a href="tel:+50238910456" style="color:var(--cy)">3891-0456</a></b><div class="sm">Horario de atención: lunes a viernes, 9:00 a. m. a 5:30 p. m.</div></div></div></div></div>
+</div></section>
+
+<section id="faq"><div class="w"><h2>Preguntas frecuentes</h2><p class="sub">Respuestas breves a las dudas más comunes antes de comprar.</p>
+<details><summary>¿La cuota del simulador es definitiva?</summary><p class="sm">Es una referencia calculada con los datos que usted ingresa. Las condiciones finales las confirma la entidad financiera antes de firmar; Onvex no garantiza la aprobación de crédito.</p></details>
+<details><summary>¿Cómo sé qué producto me conviene?</summary><p class="sm">Cada ficha indica para quién conviene, y puede comparar hasta tres productos. Además, nuestros asesores le orientan sin presión de venta.</p></details>
+<details><summary>¿Qué incluye la Asesoría Integral?</summary><p class="sm">El simulador de cuota, la asesoría sobre características y la comunicación sencilla de la garantía, en tienda y en línea.</p></details>
+<details><summary>¿Cómo comunico un reclamo de garantía?</summary><p class="sm">Llame al 4744-2809 o al 3891-0456, de lunes a viernes de 9:00 a. m. a 5:30 p. m., o visite la tienda; registramos su caso y damos seguimiento.</p></details>
+</div></section>
+
+<section id="contacto" class="alt"><div class="w"><h2>Contacto y tienda</h2><p class="sub">Atención presencial y en línea desde el centro de Chimaltenango.</p>
+<div class="g3">
+<div class="card"><div class="fi" data-i="call"></div><h3>Teléfonos</h3><p class="sm"><a href="tel:+50247442809" style="color:var(--cy);font-weight:700">4744-2809</a><br><a href="tel:+50238910456" style="color:var(--cy);font-weight:700">3891-0456</a></p></div>
+<div class="card"><div class="fi" data-i="clock"></div><h3>Horario de atención</h3><p class="sm">Lunes a viernes<br>9:00 a. m. a 5:30 p. m.</p></div>
+<div class="card"><div class="fi" data-i="pin"></div><h3>Ubicación</h3><p class="sm">2.ª calle y 1.ª avenida 1-14, zona 3, esquina, Chimaltenango 04001 (frente al parque central).<br><a href="https://www.google.com/maps/search/?api=1&query=2a+calle+1a+avenida+zona+3+Chimaltenango" target="_blank" rel="noopener" style="color:var(--cy);font-weight:700">Ver en el mapa</a></p></div>
+</div></div></section>
+<footer><div class="w">© 2027 Onvex · Tecnología clara, decisiones seguras · Tel. 4744-2809 / 3891-0456 · Lunes a viernes, 9:00 a. m. a 5:30 p. m. · 2.ª calle y 1.ª avenida 1-14, zona 3, Chimaltenango<br>Proyecto académico de la UMG, Centro Universitario de Chimaltenango. Productos, precios y tasas ilustrativos.</div></footer>
+<div class="cb" id="cb"><span id="cbn"></span><button class="btn s" id="cbo">Comparar</button><button class="btn o s" id="cbc" style="color:#fff;border-color:#fff">Limpiar</button></div>
+<div id="toast" role="status"></div><dialog id="dlg"><div id="dc"></div><p style="text-align:right;margin:18px 0 0"><button class="btn o s" id="dx">Cerrar</button></p></dialog>
+<script>
+const IC={laptop:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/>',phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',tablet:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/>',headphones:'<path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1"/><rect x="17" y="14" width="4" height="6" rx="1"/>',monitor:'<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',printer:'<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><rect x="7" y="14" width="10" height="7"/>',wifi:'<path d="M2 9a15 15 0 0120 0M5 12.5a10 10 0 0114 0M8.5 16a5 5 0 017 0"/><circle cx="12" cy="19" r="1"/>',mouse:'<rect x="6" y="3" width="12" height="18" rx="6"/><path d="M12 7v4"/>',drive:'<rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="17" cy="12" r="1"/><path d="M7 12h6"/>',home:'<path d="M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/>',check:'<path d="M5 12l5 5 9-10"/>',calc:'<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h8"/>',chat:'<path d="M21 12a8 8 0 01-11.5 7.2L4 21l1.8-5A8 8 0 1121 12z"/>',doc:'<path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h7"/>',call:'<path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',pin:'<path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'};
+const ic=n=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
+const CI={Laptops:'laptop',Celulares:'phone',Tablets:'tablet',Audio:'headphones',Monitores:'monitor',Impresión:'printer',Redes:'wifi',Periféricos:'mouse',Almacenamiento:'drive','Hogar inteligente':'home'};
+const D=[["Laptop 15.6″ Core i5","Laptops",3999,["8 GB RAM","256 GB SSD","Pantalla Full HD"],"Estudio y trabajo diario"],
+["Laptop 14″ ultraliviana","Laptops",5899,["16 GB RAM","512 GB SSD","Batería de larga duración"],"Movilidad y teletrabajo"],
+["Laptop gamer 15.6″","Laptops",8499,["16 GB RAM","1 TB SSD","Gráficos dedicados"],"Diseño, edición y videojuegos"],
+["Laptop 15.6″ básica","Laptops",2499,["4 GB RAM","128 GB SSD","Windows incluido"],"Tareas escolares y navegación"],
+["Smartphone 128 GB","Celulares",1899,["Pantalla 6.5″","128 GB","Cámara doble"],"Uso diario y redes sociales"],
+["Smartphone gama media 256 GB","Celulares",2799,["Pantalla AMOLED","256 GB","Carga rápida"],"Fotografía y multitarea"],
+["Smartphone básico 64 GB","Celulares",999,["Pantalla 6.1″","64 GB","Batería 4,000 mAh"],"Llamadas y mensajería"],
+["Smartphone alta gama 256 GB","Celulares",5499,["Cámara triple 50 MP","256 GB","Pantalla 120 Hz"],"Profesionales y creadores"],
+["Tablet 10″","Tablets",1499,["64 GB","Pantalla 10.1″","Wi-Fi"],"Clases en línea y lectura"],
+["Tablet 11″ con lápiz","Tablets",2999,["128 GB","Pantalla 11″ 90 Hz","Lápiz incluido"],"Apuntes y diseño ligero"],
+["Audífonos inalámbricos","Audio",349,["Bluetooth 5.3","24 h de batería","Micrófono integrado"],"Música y llamadas"],
+["Audífonos con cancelación de ruido","Audio",899,["Cancelación activa","30 h de batería","Plegables"],"Oficina y viajes"],
+["Bocina Bluetooth portátil","Audio",449,["Resistente al agua","12 h de batería","Sonido estéreo"],"Reuniones y exteriores"],
+["Monitor 24″ Full HD","Monitores",1099,["1920×1080","75 Hz","HDMI y VGA"],"Oficina en casa"],
+["Monitor 27″ QHD","Monitores",1899,["2560×1440","IPS","HDMI y DisplayPort"],"Diseño y productividad"],
+["Impresora multifunción","Impresión",999,["Imprime, copia y escanea","Tinta continua","Wi-Fi"],"Tareas y negocio pequeño"],
+["Impresora láser monocromática","Impresión",1799,["28 páginas por minuto","Dúplex","Red Ethernet"],"Oficinas y documentos"],
+["Router Wi-Fi 6","Redes",449,["Doble banda","Hasta 1,800 Mbps","4 puertos"],"Internet estable en casa"],
+["Sistema Wi-Fi mesh (2 piezas)","Redes",1099,["Cobertura hasta 300 m²","Wi-Fi 6","App de control"],"Casas de varios niveles"],
+["Teclado y mouse inalámbricos","Periféricos",249,["Receptor USB","Diseño silencioso","Pilas incluidas"],"Escritorio y oficina"],
+["Teclado mecánico","Periféricos",449,["Switches rojos","Retroiluminado","Cable USB"],"Escritura y juegos"],
+["SSD externo 1 TB","Almacenamiento",899,["USB 3.2","Hasta 1,000 MB/s","Compacto"],"Respaldos y proyectos"],
+["Memoria USB 128 GB","Almacenamiento",119,["USB 3.0","Metálica","Plug and play"],"Traslado de archivos"],
+["Cámara Wi-Fi de seguridad","Hogar inteligente",349,["1080p","Visión nocturna","Audio bidireccional"],"Vigilancia de hogar o negocio"],
+["Smart TV 43″ 4K","Hogar inteligente",2299,["Ultra HD","Apps de streaming","Control por voz"],"Entretenimiento familiar"]];
+const P=D.map((a,i)=>({id:i,n:a[0],c:a[1],p:a[2],s:a[3],u:a[4]}));
+const $=s=>document.querySelector(s),Q=n=>"Q"+n.toLocaleString("es-GT",{minimumFractionDigits:2,maximumFractionDigits:2});
+const cuota=(m,n,t)=>{const r=t/1200;return r?m*r/(1-Math.pow(1+r,-n)):m/n};
+document.querySelectorAll("[data-i]").forEach(e=>e.innerHTML=ic(e.dataset.i));
+let cat="Todos",cart=[],cmp=[];const cats=["Todos",...new Set(P.map(x=>x.c))];
+const T=t=>{const e=$("#toast");e.textContent=t;e.classList.add("s");setTimeout(()=>e.classList.remove("s"),1800)};
+const byId=id=>P[id],tasa=()=>+$("#t").value||0,plazo=()=>+$("#n").value;
+function drawCats(){$("#cats").innerHTML=cats.map(c=>`<button class="${c==cat?"on":""}" data-c="${c}">${c=="Todos"?"":`<span style="font-size:15px;display:flex">${ic(CI[c])}</span>`}${c}</button>`).join("")}
+function draw(){const q=$("#q").value.toLowerCase(),mx=+$("#mx").value,so=$("#so").value;$("#mv").textContent="Q"+mx.toLocaleString("es-GT");
+ let l=P.filter(x=>(cat=="Todos"||x.c==cat)&&x.p<=mx&&(x.n+" "+x.s.join(" ")+" "+x.u).toLowerCase().includes(q));
+ if(so)l.sort((a,b)=>so=="a"?a.p-b.p:b.p-a.p);
+ $("#pg").innerHTML=l.map(x=>`<article class="card pc"><div class="tl"><i>${x.c}</i>${ic(CI[x.c])}</div><div class="pb"><h3>${x.n}</h3><div class="sm">${x.s.slice(0,2).join(" · ")}</div><div class="pr">${Q(x.p)}</div><div class="cu">Desde ${Q(cuota(x.p,12,12))} al mes (12 meses, ref.)</div>
+ <label class="cm"><input type="checkbox" data-m="${x.id}" ${cmp.includes(x.id)?"checked":""}> Comparar</label>
+ <div class="rw"><button class="btn o s" data-d="${x.id}">Ver ficha</button><button class="btn s" data-a="${x.id}">Agregar</button></div></div></article>`).join("");
+ $("#cnt").textContent=l.length?`${l.length} de ${P.length} productos`:"No encontramos productos con esos filtros."}
+function sim(set){const p=+$("#p").value||0,pc=+$("#er").value,e=Math.round(p*pc)/100,n=plazo(),t=tasa(),f=p-e;
+ $("#ev").textContent=`${pc} % (${Q(e)})`;
+ const c=f>0?cuota(f,n,t):0,tot=c*n+e,int=Math.max(c*n-f,0);
+ $("#rc").textContent=c?Q(c):"—";$("#rt").textContent=c?`durante ${n} meses`:"Ingrese un precio mayor a cero";
+ $("#re").textContent=Q(e);$("#rf").textContent=Q(f>0?f:0);$("#ri").textContent=Q(int);$("#rtot").textContent=Q(tot);
+ const w=f>0?f/(f+int)*100:100;$("#b1").style.width=w+"%";$("#b2").style.width=(100-w)+"%";
+ let s=f,h="";for(let k=1;c&&k<=n;k++){const i=s*t/1200,cp=c-i;s-=cp;h+=`<tr><td>${k}</td><td>${Q(c)}</td><td>${Q(i)}</td><td>${Q(cp)}</td><td>${Q(Math.max(s,0))}</td></tr>`}
+ $("#am").innerHTML=h;hq()}
+function hq(){const p=+$("#hp").value||0;$("#hq").textContent=p>0?Q(cuota(p,+$("#hn").value,tasa())):"—"}
+const open=h=>{$("#dc").innerHTML=h;$("#dlg").showModal()};
+function go(p){$("#p").value=p;sim();$("#dlg").open&&$("#dlg").close();$("#simulador").scrollIntoView()}
+function ficha(id){const x=byId(id);open(`<div class="n">${x.c.toUpperCase()}</div><h2 style="font-size:24px">${x.n}</h2><div class="pr">${Q(x.p)}</div><div class="cu">Cuota de referencia: ${Q(cuota(x.p,plazo(),tasa()))} al mes (${plazo()} meses)</div>
+ <h3 style="margin-top:16px">Características</h3><ul class="sm">${x.s.map(s=>`<li>${s}</li>`).join("")}</ul><h3>Para quién conviene</h3><p class="sm">${x.u}.</p><h3>Garantía (ejemplo)</h3><p class="sm">Cobertura por fallas de fabricación. Se entrega la ficha con duración y condiciones del producto. Reclamos: 4744-2809 o 3891-0456.</p>
+ <p><button class="btn g s" data-s="${id}">Simular cuota</button> <button class="btn s" data-a="${id}">Agregar a mi lista</button></p>`)}
+function comparar(){const l=cmp.map(byId);open(`<h2 style="font-size:24px">Comparación de productos</h2><div class="tw" style="max-height:none;overflow-x:auto"><table><tr><th></th>${l.map(x=>`<th>${x.n}</th>`).join("")}</tr>
+ <tr><td>Precio</td>${l.map(x=>`<td><b>${Q(x.p)}</b></td>`).join("")}</tr><tr><td>Cuota (${plazo()} m.)</td>${l.map(x=>`<td>${Q(cuota(x.p,plazo(),tasa()))}</td>`).join("")}</tr>
+ ${[0,1,2].map(i=>`<tr><td>Característica ${i+1}</td>${l.map(x=>`<td>${x.s[i]}</td>`).join("")}</tr>`).join("")}<tr><td>Conviene para</td>${l.map(x=>`<td>${x.u}</td>`).join("")}</tr></table></div>`)}
+function lista(){const s=cart.reduce((a,id)=>a+byId(id).p,0);open(`<h2 style="font-size:24px">Mi lista</h2>${cart.length?`<div class="tw" style="max-height:none">${cart.map((id,i)=>`<div class="kv"><span>${byId(id).n}</span><span>${Q(byId(id).p)} <button class="btn o s" data-r="${i}">Quitar</button></span></div>`).join("")}</div>
+ <div class="kv"><b>Total</b><b>${Q(s)}</b></div><p><button class="btn g s" data-g="${s}">Simular el total</button></p>`:'<p class="sm">Su lista está vacía. Agregue productos desde el catálogo.</p>'}`)}
+function upd(){$("#cartb").innerHTML=`${ic("list")} Mi lista (${cart.length})`;$("#cb").classList.toggle("s",cmp.length>0);$("#cbn").textContent=`${cmp.length} de 3 seleccionados`;$("#cbo").style.display=cmp.length>1?"":"none"}
+document.addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;const d=b.dataset;
+ if(d.c){cat=d.c;drawCats();draw()}
+ if(d.a){cart.push(+d.a);upd();T("Agregado a su lista")}
+ if(d.d)ficha(+d.d);if(d.s)go(byId(+d.s).p);if(d.g)go(+d.g);
+ if(d.r){cart.splice(+d.r,1);upd();lista()}
+ if(d.t){document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x==b));document.querySelectorAll(".pn").forEach((x,i)=>x.classList.toggle("on",i==+d.t))}
+ if(b.id=="cartb")lista();if(b.id=="dx")$("#dlg").close();if(b.id=="cbo")comparar();if(b.id=="cbc"){cmp=[];draw();upd()}});
+document.addEventListener("change",ev=>{const m=ev.target.dataset.m;if(m===undefined)return;const id=+m;
+ if(ev.target.checked){if(cmp.length>=3){ev.target.checked=false;return T("Máximo 3 productos")}cmp.push(id)}else cmp=cmp.filter(x=>x!=id);upd()});
+$("#dlg").addEventListener("click",e=>{if(e.target.id=="dlg")$("#dlg").close()});
+["#q","#mx","#so"].forEach(s=>$(s).addEventListener("input",draw));
+["#p","#er","#n","#t"].forEach(s=>$(s).addEventListener("input",()=>sim()));
+["#hp","#hn"].forEach(s=>$(s).addEventListener("input",hq));
+$("#hgo").addEventListener("click",()=>{$("#p").value=$("#hp").value;$("#n").value=$("#hn").value;sim()});
+const io="IntersectionObserver"in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15}):null;
+document.querySelectorAll(".rv").forEach(e=>io?io.observe(e):e.classList.add("in"));
+drawCats();draw();sim();upd();
+</script></body></html>
